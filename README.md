@@ -51,51 +51,284 @@ Questions you should ask yourself:
 
 **`Cult`**
 
-* `Cult#name`
+- [x] `Cult#name`
   * returns a `String` that is the cult's name
-* `Cult#location`
+  ```ruby
+  ham.name
+  => "Humans Against Monsters"
+  ```
+- [x] `Cult#location`
   * returns a `String` that is the city where the cult is located
-* `Cult#founding_year`
+  ```ruby
+  trinity.location
+  => "Yamatai Island"
+  ```
+- [x] `Cult#founding_year`
   * returns an `Integer` that is the year the cult was founded
-* `Cult#slogan`
+  ```Ruby
+  project_mayhem.founding_year
+  => 1996
+  ```
+- [x] `Cult#slogan`
   * returns a `String` that is this cult's slogan
-* `Cult#recruit_follower`
+  ```ruby
+  solarii.slogan
+  => "Brotherhood of the Sun"
+  ```
+
+- [x] `Cult#recruit_follower`
   * takes in an argument of a `Follower` instance and adds them to this cult's list of followers
-* `Cult#cult_population`
+  ```ruby
+  trinity.recruit_follower(sliske)
+  => #<BloodOath:0x00007fbc8805a1f8
+   @cult=
+    #<Cult:0x00007fbc8900df50
+     @founding_year=978,
+     @location="Yamatai Island",
+     @name="Trinity",
+     @slogan="...then blood it shall be">,
+   @follower=
+    #<Follower:0x00007fbc8900dc30
+     @age=23,
+     @motto="Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?",
+     @name="Sliske">,
+   @initiation_date="2020-05-16 20:23:11 -0400">
+  ```
+- [x] `Cult#cult_population`
   * returns an `Integer` that is the number of followers in this cult
-* `Cult.all`
+  ```ruby
+  trinity.cult_population
+  => 2
+  # bc only Sliske and Lara Croft joined.
+  ```
+- [x] `Cult.all`
   * returns an `Array` of all the cults
-* `Cult.find_by_name`
+  ```ruby
+  Cult.all
+  => [#<Cult:0x00007f89021e7ef8
+    @founding_year=1869,
+    @location="Abandoned Mine",
+    @name="Humans Against Monsters",
+    @slogan="Cor blimey, mate! What are ye doing in me pockets?">,
+   #<Cult:0x00007f89021e7e08
+    @founding_year=978,
+    @location="Yamatai Island",
+    @name="Trinity",
+    @slogan="...then blood it shall be">,
+   #<Cult:0x00007f89021e7d68
+    @founding_year=1980,
+    @location="Yamatai Island",
+    @name="Solarii",
+    @slogan="Brotherhood of the Sun">,
+   #<Cult:0x00007f89021e7ca0
+    @founding_year=1996,
+    @location="Paper Street House",
+    @name="Project Mayhem",
+    @slogan="You don't ask questions about Project Mayhem.">]
+  ```
+- [x] `Cult.find_by_name`
   * takes a `String` argument that is a name and returns a `Cult` instance whose name matches that argument
-* `Cult.find_by_location`
+  ```ruby
+  Cult.find_by_name("Humans Against Monsters")
+  => [#<Cult:0x00007f84b98f2d08
+  @founding_year=1869,
+  @location="Abandoned Mine",
+  @name="Humans Against Monsters",
+  @slogan="Cor blimey, mate! What are ye doing in me pockets?">]
+  ```
+- [x] `Cult.find_by_location`
   * takes a `String` argument that is a location and returns an `Array` of cults that are in that location
-* `Cult.find_by_founding_year`
+  ```ruby
+  Cult.find_by_location("Yamatai Island")
+  => [#<Cult:0x00007fdd7210ddb0
+  @founding_year=978,
+  @location="Yamatai Island",
+  @name="Trinity",
+  @slogan="...then blood it shall be">,
+ #<Cult:0x00007fdd7210dd10
+  @founding_year=1980,
+  @location="Yamatai Island",
+  @name="Solarii",
+  @slogan="Brotherhood of the Sun">]
+  ```
+- [x] `Cult.find_by_founding_year`
   * takes an `Integer` argument that is a year and returns all of the cults founded in that year
+  ```ruby
+  Cult.find_by_founding_year(1996)
+  => [#<Cult:0x00007fd894056e68
+  @founding_year=1996,
+  @location="Paper Street House",
+  @name="Project Mayhem",
+  @slogan="You don't ask questions about Project Mayhem.">]
+  ```
 
 **`Follower`**
 
-* `Follower#name`
+- [x] `Follower#name`
   * returns a `String` that is the follower's name
-* `Follower#age`
+  ```Ruby
+  robert_paulson.name
+  => "Robert Paulson"
+  ```
+- [x] `Follower#age`
   * returns an `Integer` that is the age of the follower
-* `Follower#life_motto`
+  ```ruby
+  lara_croft.age
+  => 30
+  ```
+- [x] `Follower#life_motto`
   * returns a `String` that is the follower's life motto
-* `Follower#cults`
+  ```ruby
+  sliske.motto
+  => "Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?"
+  ```
+- [x] `Follower#cults`
   * returns an `Array` of this follower's cults
-* `Follower#join_cult`
+  ```Ruby
+  lara_croft.cults
+  => [#<BloodOath:0x00007fc9a31af918
+  @cult=
+   #<Cult:0x00007fc9a31afc60
+    @founding_year=978,
+    @location="Yamatai Island",
+    @name="Trinity",
+    @slogan="...then blood it shall be">,
+  @follower=
+   #<Follower:0x00007fc9a31afa30
+    @age=30,
+    @motto="The extraordinary is in what we do, not who we are.",
+    @name="Lara Croft">,
+  @initiation_date="2003-04-20">,
+ #<BloodOath:0x00007fc9a31af8c8
+  @cult=
+   #<Cult:0x00007fc9a31afbc0
+    @founding_year=1980,
+    @location="Yamatai Island",
+    @name="Solarii",
+    @slogan="Brotherhood of the Sun">,
+  @follower=
+   #<Follower:0x00007fc9a31afa30
+    @age=30,
+    @motto="The extraordinary is in what we do, not who we are.",
+    @name="Lara Croft">,
+  @initiation_date="2000-03-18">]
+  ```
+- [x] `Follower#join_cult`
   * takes in an argument of a `Cult` instance and adds this follower to the cult's list of followers
-* `Follower.all`
+  ```ruby
+  lara_croft.join_cult(ham)
+  # output
+  => #<BloodOath:0x00007fb313898438
+ @cult=
+  #<Cult:0x00007fb3148ec8c0
+   @founding_year=1869,
+   @location="Abandoned Mine",
+   @name="Humans Against Monsters",
+   @slogan="Cor blimey, mate! What are ye doing in me pockets?">,
+ @follower=
+  #<Follower:0x00007fb3148ec5f0
+   @age=30,
+   @motto="The extraordinary is in what we do, not who we are.",
+   @name="Lara Croft">,
+ @initiation_date="2020-05-16 20:11:27 -0400">
+  ```
+- [x] `Follower.all`
   * returns an `Array` of all the followers
-* `Follower.of_a_certain_age`
+  ```ruby
+  Follower.all
+  => [#<Follower:0x00007ff56203ba60
+    @age=45,
+    @motto="His name was Robert Paulson.",
+    @name="Robert Paulson">,
+ #<Follower:0x00007ff56203b9e8
+  @age=30,
+  @motto="The extraordinary is in what we do, not who we are.",
+  @name="Lara Croft">,
+ #<Follower:0x00007ff56203b970
+  @age=23,
+  @motto="Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?",
+  @name="Sliske">]
+  ```
+- [x] `Follower.of_a_certain_age`
   * takes an `Integer` argument that is an age and returns an `Array` of followers who are the given age or older
+  ```ruby
+  Follower.of_a_certain_age(30)
+  => [#<Follower:0x00007fde8d87b518
+    @age=45,
+    @motto="His name was Robert Paulson.",
+    @name="Robert Paulson">,
+ #<Follower:0x00007fde8d87b4a0
+  @age=30,
+  @motto="The extraordinary is in what we do, not who we are.",
+  @name="Lara Croft">]
+  ```
 
 **`BloodOath`**
 
-* `BloodOath#initiation_date`
+- [x] `BloodOath#initiation_date`
   * returns a `String` that is the initiation date of this blood oath in the format _YYYY-MM-DD_.
-* `BloodOath.all`
+  ```ruby
+  bo1.initiation_date
+  "2003-4-20"
+  # not 100% certain if this date should be formatted in anyway
+  # do revisit this
+  ```
+- [x] `BloodOath.all`
   * returns an `Array` of all the blood oaths
-
+  ```ruby
+  BloodOath.all
+  => [#<BloodOath:0x00007feb7e908708
+    @cult=
+     #<Cult:0x00007feb7e908a50
+      @founding_year=978,
+      @location="Yamatai Island",
+      @name="Trinity",
+      @slogan="...then blood it shall be">,
+    @follower=
+     #<Follower:0x00007feb7e908820
+      @age=30,
+      @motto="The extraordinary is in what we do, not who we are.",
+      @name="Lara Croft">,
+    @initiation_date="2003-04-20">,
+   #<BloodOath:0x00007feb7e9086b8
+    @cult=
+     #<Cult:0x00007feb7e9089b0
+      @founding_year=1980,
+      @location="Yamatai Island",
+      @name="Solarii",
+      @slogan="Brotherhood of the Sun">,
+    @follower=
+     #<Follower:0x00007feb7e908820
+      @age=30,
+      @motto="The extraordinary is in what we do, not who we are.",
+      @name="Lara Croft">,
+    @initiation_date="2000-03-18">,
+   #<BloodOath:0x00007feb7e908668
+    @cult=
+     #<Cult:0x00007feb7e908910
+      @founding_year=1996,
+      @location="Paper Street House",
+      @name="Project Mayhem",
+      @slogan="You don't ask questions about Project Mayhem.">,
+    @follower=#<Follower:0x00007feb7e908898
+    @age=45,
+    @motto="His name was Robert Paulson.",
+    @name="Robert Paulson">,
+    @initiation_date="2005-11-27">,
+   #<BloodOath:0x00007feb7e908618
+    @cult=
+     #<Cult:0x00007feb7e908af0
+      @founding_year=1869,
+      @location="Abandoned Mine",
+      @name="Humans Against Monsters",
+      @slogan="Cor blimey, mate! What are ye doing in me pockets?">,
+    @follower=
+     #<Follower:0x00007feb7e9087a8
+      @age=23,
+      @motto="Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?",
+      @name="Sliske">,
+    @initiation_date="2020-03-29">]
+  ```
 ---
 
 ### Advanced Methods - Analytics!
