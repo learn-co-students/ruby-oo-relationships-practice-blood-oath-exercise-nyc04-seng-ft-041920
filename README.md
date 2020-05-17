@@ -91,19 +91,7 @@ Questions you should ask yourself:
   ```ruby
   trinity.recruit_follower(sliske)
   # so this was the output [1]
-  => #<BloodOath:0x00007fbc8805a1f8
-   @cult=
-    #<Cult:0x00007fbc8900df50
-     @founding_year=978,
-     @location="Yamatai Island",
-     @name="Trinity",
-     @slogan="...then blood it shall be">,
-   @follower=
-    #<Follower:0x00007fbc8900dc30
-     @age=23,
-     @motto="Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?",
-     @name="Sliske">,
-   @initiation_date="2020-05-16 20:23:11 -0400">
+  => #<BloodOath:0x00007fbc8805a1f8 @cult=#<Cult:0x00007fbc8900df50 @founding_year=978, @location="Yamatai Island", @name="Trinity", @slogan="...then blood it shall be">, @follower=#<Follower:0x00007fbc8900dc30 @age=23, @motto="Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?", @name="Sliske">, @initiation_date="2020-05-16 20:23:11 -0400">
   ```
 
 - [x] `Cult#cult_population`
@@ -120,26 +108,10 @@ Questions you should ask yourself:
 
   ```ruby
   Cult.all
-  => [#<Cult:0x00007f89021e7ef8
-    @founding_year=1869,
-    @location="Abandoned Mine",
-    @name="Humans Against Monsters",
-    @slogan="Cor blimey, mate! What are ye doing in me pockets?">,
-   #<Cult:0x00007f89021e7e08
-    @founding_year=978,
-    @location="Yamatai Island",
-    @name="Trinity",
-    @slogan="...then blood it shall be">,
-   #<Cult:0x00007f89021e7d68
-    @founding_year=1980,
-    @location="Yamatai Island",
-    @name="Solarii",
-    @slogan="Brotherhood of the Sun">,
-   #<Cult:0x00007f89021e7ca0
-    @founding_year=1996,
-    @location="Paper Street House",
-    @name="Project Mayhem",
-    @slogan="You don't ask questions about Project Mayhem.">]
+  => [#<Cult:0x00007f89021e7ef8 @founding_year=1869, @location="Abandoned Mine", @name="Humans Against Monsters", @slogan="Cor blimey, mate! What are ye doing in me pockets?">,
+   #<Cult:0x00007f89021e7e08 @founding_year=978, @location="Yamatai Island", @name="Trinity", @slogan="...then blood it shall be">,
+   #<Cult:0x00007f89021e7d68 @founding_year=1980, @location="Yamatai Island", @name="Solarii", @slogan="Brotherhood of the Sun">,
+   #<Cult:0x00007f89021e7ca0 @founding_year=1996, @location="Paper Street House", @name="Project Mayhem", @slogan="You don't ask questions about Project Mayhem.">]
   ```
 
 - [x] `Cult.find_by_name`
@@ -147,11 +119,7 @@ Questions you should ask yourself:
 
   ```ruby
   Cult.find_by_name("Humans Against Monsters")
-  => [#<Cult:0x00007f84b98f2d08
-  @founding_year=1869,
-  @location="Abandoned Mine",
-  @name="Humans Against Monsters",
-  @slogan="Cor blimey, mate! What are ye doing in me pockets?">]
+  => [#<Cult:0x00007f84b98f2d08 @founding_year=1869, @location="Abandoned Mine", @name="Humans Against Monsters", @slogan="Cor blimey, mate! What are ye doing in me pockets?">]
   ```
 
 - [x] `Cult.find_by_location`
@@ -159,28 +127,19 @@ Questions you should ask yourself:
 
   ```ruby
   Cult.find_by_location("Yamatai Island")
-  => [#<Cult:0x00007fdd7210ddb0
-  @founding_year=978,
-  @location="Yamatai Island",
-  @name="Trinity",
-  @slogan="...then blood it shall be">,
- #<Cult:0x00007fdd7210dd10
-  @founding_year=1980,
-  @location="Yamatai Island",
-  @name="Solarii",
-  @slogan="Brotherhood of the Sun">]
+  => [
+  #<Cult:0x00007fdd7210ddb0 @founding_year=978, @location="Yamatai Island", @name="Trinity", @slogan="...then blood it shall be">, 
+  #<Cult:0x00007fdd7210dd10 @founding_year=1980, @location="Yamatai Island", @name="Solarii", @slogan="Brotherhood of the Sun">
+  ]
   ```
+---
 
 - [x] `Cult.find_by_founding_year`
   * takes an `Integer` argument that is a year and returns all of the cults founded in that year
 
   ```ruby
   Cult.find_by_founding_year(1996)
-  => [#<Cult:0x00007fd894056e68
-  @founding_year=1996,
-  @location="Paper Street House",
-  @name="Project Mayhem",
-  @slogan="You don't ask questions about Project Mayhem.">]
+  => [#<Cult:0x00007fd894056e68 @founding_year=1996, @location="Paper Street House", @name="Project Mayhem", @slogan="You don't ask questions about Project Mayhem.">]
   ```
 
 **`Follower`**
@@ -214,32 +173,8 @@ Questions you should ask yourself:
 
   ```Ruby
   lara_croft.cults
-  => [#<BloodOath:0x00007fc9a31af918
-  @cult=
-   #<Cult:0x00007fc9a31afc60
-    @founding_year=978,
-    @location="Yamatai Island",
-    @name="Trinity",
-    @slogan="...then blood it shall be">,
-  @follower=
-   #<Follower:0x00007fc9a31afa30
-    @age=30,
-    @motto="The extraordinary is in what we do, not who we are.",
-    @name="Lara Croft">,
-  @initiation_date="2003-04-20">,
- #<BloodOath:0x00007fc9a31af8c8
-  @cult=
-   #<Cult:0x00007fc9a31afbc0
-    @founding_year=1980,
-    @location="Yamatai Island",
-    @name="Solarii",
-    @slogan="Brotherhood of the Sun">,
-  @follower=
-   #<Follower:0x00007fc9a31afa30
-    @age=30,
-    @motto="The extraordinary is in what we do, not who we are.",
-    @name="Lara Croft">,
-  @initiation_date="2000-03-18">]
+  => [#<BloodOath:0x00007fc9a31af918 @cult=#<Cult:0x00007fc9a31afc60 @founding_year=978, @location="Yamatai Island", @name="Trinity", @slogan="...then blood it shall be" @follower=#<Follower:0x00007fc9a31afa30 @age=30, @motto="The extraordinary is in what we do, not who we are.", @name="Lara Croft" @initiation_date="2003-04-20">,
+     #<BloodOath:0x00007fc9a31af8c8 @cult=#<Cult:0x00007fc9a31afbc0 @founding_year=1980, @location="Yamatai Island", @name="Solarii", @slogan="Brotherhood of the Sun">,@follower=#<Follower:0x00007fc9a31afa30 @age=30, @motto="The extraordinary is in what we do, not who we are.", @name="Lara Croft">,@initiation_date="2000-03-18">]
   ```
 
 - [x] `Follower#join_cult`
@@ -249,18 +184,18 @@ Questions you should ask yourself:
   lara_croft.join_cult(ham)
   # output
   => #<BloodOath:0x00007fb313898438
- @cult=
+  @cult=
   #<Cult:0x00007fb3148ec8c0
    @founding_year=1869,
    @location="Abandoned Mine",
    @name="Humans Against Monsters",
    @slogan="Cor blimey, mate! What are ye doing in me pockets?">,
- @follower=
+  @follower=
   #<Follower:0x00007fb3148ec5f0
    @age=30,
    @motto="The extraordinary is in what we do, not who we are.",
    @name="Lara Croft">,
- @initiation_date="2020-05-16 20:11:27 -0400">
+  @initiation_date="2020-05-16 20:11:27 -0400">
   ```
 
 - [x] `Follower.all`
@@ -272,11 +207,11 @@ Questions you should ask yourself:
     @age=45,
     @motto="His name was Robert Paulson.",
     @name="Robert Paulson">,
- #<Follower:0x00007ff56203b9e8
+   #<Follower:0x00007ff56203b9e8
   @age=30,
   @motto="The extraordinary is in what we do, not who we are.",
   @name="Lara Croft">,
- #<Follower:0x00007ff56203b970
+  #<Follower:0x00007ff56203b970
   @age=23,
   @motto="Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?",
   @name="Sliske">]
@@ -291,7 +226,7 @@ Questions you should ask yourself:
     @age=45,
     @motto="His name was Robert Paulson.",
     @name="Robert Paulson">,
- #<Follower:0x00007fde8d87b4a0
+  #<Follower:0x00007fde8d87b4a0
   @age=30,
   @motto="The extraordinary is in what we do, not who we are.",
   @name="Lara Croft">]
@@ -427,7 +362,7 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
   => ["...then blood it shall be", "Brotherhood of the Sun", "Cor blimey, mate! What are ye doing in me pockets?"]
   ```
 
-**Note: Had to create more followers for these two, but the methods above still do work**
+
 
 - [x] `Follower.most_active`
   * returns the `Follower` instance who has joined the most cults
@@ -446,17 +381,16 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
   ```ruby
   Follower.top_ten
   => [#<Follower:0x00007f90920eb328 @age=21, @motto="What if I told you there is an app on the market...", @name="Jian-Yang">,
- #<Follower:0x00007f90920eb580 @age=30, @motto="The extraordinary is in what we do, not who we are.", @name="Lara Croft">,
- #<Follower:0x00007f90920eaf40 @age=12, @motto="Die frage ist nicht wo, sondern wann", @name="Mikkel Nielsen">,
- #<Follower:0x00007f90920eb3c8 @age=16, @motto="My philosophy is 'strength from chaos and adversity'.", @name="Zamorak">,
- #<Follower:0x00007f90920eace8 @age=76, @motto="Sunce ti kalajsano!", @name="Izet Fazlinovic">,
- #<Follower:0x00007f90920eaa90 @age=34, @motto="Is there a commandment against eating ziti?", @name="Carmela Soprano">,
- #<Follower:0x00007f90920eaa18 @age=32, @motto="YOU CAN'T MAKE A TOMLETTE WITHOUT BREAKING A FEW GREGGS!", @name="Tom Wambsgans">,
- #<Follower:0x00007f90920eb648 @age=45, @motto="His name was Robert Paulson.", @name="Robert Paulson">,
- #<Follower:0x00007f90920eb080 @age=70, @motto="F*ck off", @name="Logan Roy">,
- #<Follower:0x00007f90920eb4b8 @age=23, @motto="Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?", @name="Sliske">]
- # HOWEVER... IM A BIT CONFUSED, DID IT WANT AN ARRAY OF INSTANCES? OR NAMES? so i did both
- => ["Jian-Yang", "Lara Croft", "Mikkel Nielsen", "Zamorak", "Izet Fazlinovic", "Carmela Soprano", "Tom Wambsgans", "Robert Paulson", "Logan Roy", "Sliske"]
+  #<Follower:0x00007f90920eb580 @age=30, @motto="The extraordinary is in what we do, not who we are.", @name="Lara Croft">,
+  #<Follower:0x00007f90920eaf40 @age=12, @motto="Die frage ist nicht wo, sondern wann", @name="Mikkel Nielsen">,
+  #<Follower:0x00007f90920eb3c8 @age=16, @motto="My philosophy is 'strength from chaos and adversity'.", @name="Zamorak">,
+  #<Follower:0x00007f90920eace8 @age=76, @motto="Sunce ti kalajsano!", @name="Izet Fazlinovic">,
+  #<Follower:0x00007f90920eaa90 @age=34, @motto="Is there a commandment against eating ziti?", @name="Carmela Soprano">,
+  #<Follower:0x00007f90920eaa18 @age=32, @motto="YOU CAN'T MAKE A TOMLETTE WITHOUT BREAKING A FEW GREGGS!", @name="Tom Wambsgans">,
+  #<Follower:0x00007f90920eb648 @age=45, @motto="His name was Robert Paulson.", @name="Robert Paulson">,
+  #<Follower:0x00007f90920eb080 @age=70, @motto="F*ck off", @name="Logan Roy">,
+  #<Follower:0x00007f90920eb4b8 @age=23, @motto="Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?", @name="Sliske">]
+  => ["Jian-Yang", "Lara Croft", "Mikkel Nielsen", "Zamorak", "Izet Fazlinovic", "Carmela Soprano", "Tom Wambsgans", "Robert Paulson", "Logan Roy", "Sliske"]
   ```
 
 **`BloodOath`**
