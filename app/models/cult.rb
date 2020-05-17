@@ -35,8 +35,31 @@ class Cult
     BloodOath.new(Time.now.to_s, self, lamb)
   end
 
-  def cult_population
-    BloodOath.all.select {|cult| cult.cult == self}.count
+  # needed a followers method
+  def followers
+    BloodOath.all.select {|cult| cult.cult == self}
   end
 
+  def cult_population
+    followers.count
+  end
+
+  def average_age
+    age = followers.collect {|follower| follower.follower.age}
+    age.reduce(:+).to_f/age.count
+  end
+
+  def my_followers_mottos
+    followers.collect {|sacrificial_lamb| sacrificial_lamb.follower.motto}
+  end
+
+  def self.least_popular
+    # instead of referencing by index
+    self.all.min_by {|cult| cult.cult_population}
+  end
+
+  def self.most_common_location
+    arr = self.all.collect {|location| location.location} # arr of locations
+    arr.max_by {|place| arr.count(place)} # can have count inside for this
+  end
 end

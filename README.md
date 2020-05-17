@@ -75,11 +75,11 @@ Questions you should ask yourself:
   solarii.slogan
   => "Brotherhood of the Sun"
   ```
-
 - [x] `Cult#recruit_follower`
   * takes in an argument of a `Follower` instance and adds them to this cult's list of followers
   ```ruby
   trinity.recruit_follower(sliske)
+  # so this was the output [1]
   => #<BloodOath:0x00007fbc8805a1f8
    @cult=
     #<Cult:0x00007fbc8900df50
@@ -99,7 +99,7 @@ Questions you should ask yourself:
   ```ruby
   trinity.cult_population
   => 2
-  # bc only Sliske and Lara Croft joined.
+  # bc only Sliske [1] and Lara Croft joined.
   ```
 - [x] `Cult.all`
   * returns an `Array` of all the cults
@@ -339,28 +339,88 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
 
 **`Cult`**
 
-* `Cult#average_age`
+- [x] `Cult#average_age`
   * returns a `Float` that is the average age of this cult's followers
-* `Cult#my_followers_mottos`
+  ```ruby
+  # using trinity for this example, both ages were 30 and 23
+  trinity.average_age
+  => 26.5
+  ```
+- [x] `Cult#my_followers_mottos`
   * prints out all of the mottos for this cult's followers
-* `Cult.least_popular`
+  ```ruby
+  trinity.my_followers_mottos
+  => [
+    "The extraordinary is in what we do, not who we are.",
+    "Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?"
+  ]
+  ```
+- [x] `Cult.least_popular`
   * returns the `Cult` instance who has the least number of followers :(
-* `Cult.most_common_location`
+  ```ruby
+  Cult.least_popular
+  => #<Cult:0x00007f89d68b8258
+  @founding_year=1980,
+  @location="Yamatai Island",
+  @name="Solarii",
+  @slogan="Brotherhood of the Sun">
+  ```
+- [x] `Cult.most_common_location`
   * returns a `String` that is the location with the most cults
+  ```ruby
+  Cult.most_common_location
+  "Yamatai Island"
+  ```
 
 **`Follower`**
 
-* `Follower#my_cults_slogans`
+- [x] `Follower#my_cults_slogans`
   * prints out all of the slogans for this follower's cults
-* `Follower.most_active`
+  ```ruby
+  lara_croft.my_cults_slogans
+  => ["...then blood it shall be", "Brotherhood of the Sun", "Cor blimey, mate! What are ye doing in me pockets?"]
+  ```
+
+**Note: Had to create more followers for these two, but the methods above still do work**
+
+- [x] `Follower.most_active`
   * returns the `Follower` instance who has joined the most cults
-* `Follower.top_ten`
+  ```Ruby
+  Follower.most_active
+  => #<Follower:0x00007fc80b91f868
+  @age=21,
+  @motto="What if I told you there is an app on the market...",
+  @name="Jian-Yang">
+  ```
+- [x] `Follower.top_ten`
   * returns an `Array` of followers; they are the ten most active followers
+  ```ruby
+  Follower.top_ten
+  => [#<Follower:0x00007f90920eb328 @age=21, @motto="What if I told you there is an app on the market...", @name="Jian-Yang">,
+ #<Follower:0x00007f90920eb580 @age=30, @motto="The extraordinary is in what we do, not who we are.", @name="Lara Croft">,
+ #<Follower:0x00007f90920eaf40 @age=12, @motto="Die frage ist nicht wo, sondern wann", @name="Mikkel Nielsen">,
+ #<Follower:0x00007f90920eb3c8 @age=16, @motto="My philosophy is 'strength from chaos and adversity'.", @name="Zamorak">,
+ #<Follower:0x00007f90920eace8 @age=76, @motto="Sunce ti kalajsano!", @name="Izet Fazlinovic">,
+ #<Follower:0x00007f90920eaa90 @age=34, @motto="Is there a commandment against eating ziti?", @name="Carmela Soprano">,
+ #<Follower:0x00007f90920eaa18 @age=32, @motto="YOU CAN'T MAKE A TOMLETTE WITHOUT BREAKING A FEW GREGGS!", @name="Tom Wambsgans">,
+ #<Follower:0x00007f90920eb648 @age=45, @motto="His name was Robert Paulson.", @name="Robert Paulson">,
+ #<Follower:0x00007f90920eb080 @age=70, @motto="F*ck off", @name="Logan Roy">,
+ #<Follower:0x00007f90920eb4b8 @age=23, @motto="Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?", @name="Sliske">]
+ # HOWEVER... IM A BIT CONFUSED, DID IT WANT AN ARRAY OF INSTANCES? OR NAMES? so i did both
+ => ["Jian-Yang", "Lara Croft", "Mikkel Nielsen", "Zamorak", "Izet Fazlinovic", "Carmela Soprano", "Tom Wambsgans", "Robert Paulson", "Logan Roy", "Sliske"]
+  ```
 
 **`BloodOath`**
 
-* `BloodOath.first_oath`
+- [x] `BloodOath.first_oath`
   * returns the `Follower` instance for the follower that made the very first blood oath
+  ```Ruby
+  BloodOath.first_oath
+  => #<Follower:0x00007f93ec06b3a0
+  @age=30,
+  @motto="The extraordinary is in what we do, not who we are.",
+  @name="Lara Croft">
+  ```
 
 ---
 

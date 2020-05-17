@@ -20,5 +20,9 @@ class BloodOath
     @@all
   end
 
+  def self.first_oath
+    @@all[0].follower
+    # because calling all seems to return a sorted list, where it almost remembers who came in first
+  end
 
 end
