@@ -121,40 +121,19 @@ trinity.cult_population
 
 ```ruby
   Cult.all
-  => [#<Cult:0x00007f89021e7ef8
-    @founding_year=1869,
-    @location="Abandoned Mine",
-    @name="Humans Against Monsters",
-    @slogan="Cor blimey, mate! What are ye doing in me pockets?">,
-   #<Cult:0x00007f89021e7e08
-    @founding_year=978,
-    @location="Yamatai Island",
-    @name="Trinity",
-    @slogan="...then blood it shall be">,
-   #<Cult:0x00007f89021e7d68
-    @founding_year=1980,
-    @location="Yamatai Island",
-    @name="Solarii",
-    @slogan="Brotherhood of the Sun">,
-   #<Cult:0x00007f89021e7ca0
-    @founding_year=1996,
-    @location="Paper Street House",
-    @name="Project Mayhem",
-    @slogan="You don't ask questions about Project Mayhem.">]
-  ```
+  => [#<Cult:0x00007f89021e7ef8 @founding_year=1869, @location="Abandoned Mine", @name="Humans Against Monsters", @slogan="Cor blimey, mate! What are ye doing in me pockets?">,
+   #<Cult:0x00007f89021e7e08 @founding_year=978, @location="Yamatai Island", @name="Trinity", @slogan="...then blood it shall be">,
+   #<Cult:0x00007f89021e7d68 @founding_year=1980, @location="Yamatai Island", @name="Solarii", @slogan="Brotherhood of the Sun">,
+   #<Cult:0x00007f89021e7ca0 @founding_year=1996, @location="Paper Street House", @name="Project Mayhem", @slogan="You don't ask questions about Project Mayhem.">]
+```
 ---
 - [x] `Cult.find_by_name`
   * takes a `String` argument that is a name and returns a `Cult` instance whose name matches that argument
 
 ```ruby
   Cult.find_by_name("Humans Against Monsters")
-  => [#<Cult:0x00007f84b98f2d08
-  @founding_year=1869,
-  @location="Abandoned Mine",
-  @name="Humans Against Monsters",
-  @slogan="Cor blimey, mate! What are ye doing in me pockets?">]
+  => [#<Cult:0x00007f84b98f2d08 @founding_year=1869, @location="Abandoned Mine", @name="Humans Against Monsters", @slogan="Cor blimey, mate! What are ye doing in me pockets?">]
 ```
----
 
 - [x] `Cult.find_by_location`
   * takes a `String` argument that is a location and returns an `Array` of cults that are in that location
@@ -255,13 +234,13 @@ robert_paulson.name
   lara_croft.join_cult(ham)
   # output
   => #<BloodOath:0x00007fb313898438
- @cult=
+  @cult=
   #<Cult:0x00007fb3148ec8c0
    @founding_year=1869,
    @location="Abandoned Mine",
    @name="Humans Against Monsters",
    @slogan="Cor blimey, mate! What are ye doing in me pockets?">,
- @follower=
+  @follower=
   #<Follower:0x00007fb3148ec5f0
    @age=30,
    @motto="The extraordinary is in what we do, not who we are.",
@@ -279,11 +258,11 @@ robert_paulson.name
     @age=45,
     @motto="His name was Robert Paulson.",
     @name="Robert Paulson">,
- #<Follower:0x00007ff56203b9e8
+   #<Follower:0x00007ff56203b9e8
   @age=30,
   @motto="The extraordinary is in what we do, not who we are.",
   @name="Lara Croft">,
- #<Follower:0x00007ff56203b970
+  #<Follower:0x00007ff56203b970
   @age=23,
   @motto="Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?",
   @name="Sliske">]
@@ -299,7 +278,7 @@ robert_paulson.name
     @age=45,
     @motto="His name was Robert Paulson.",
     @name="Robert Paulson">,
- #<Follower:0x00007fde8d87b4a0
+  #<Follower:0x00007fde8d87b4a0
   @age=30,
   @motto="The extraordinary is in what we do, not who we are.",
   @name="Lara Croft">]
