@@ -51,12 +51,7 @@ class Follower
     # or did it want the name of each person, in the array?
   end
 
-  def fellow_cult_members(member)
-    # how does this not take an argument???
-    # remember how it says uniq? can't include you
-    # self.all.select {|follower|}
-    # don't you want to grab followers first,
-
-    cults.collect {|follower| cults.follower.name unless cults.follower.name == member.name}
+  def fellow_cult_members
+    # cults.collect {|follower| cults.follower.name unless cults.follower.name == member.name}
   end
 end

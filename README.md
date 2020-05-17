@@ -55,6 +55,7 @@ Questions you should ask yourself:
 
 - [x] `Cult#name`
   * returns a `String` that is the cult's name
+
   ```ruby
   ham.name
   => "Humans Against Monsters"
@@ -62,6 +63,7 @@ Questions you should ask yourself:
 
 - [x] `Cult#location`
   * returns a `String` that is the city where the cult is located
+
   ```ruby
   trinity.location
   => "Yamatai Island"
@@ -69,6 +71,7 @@ Questions you should ask yourself:
 
 - [x] `Cult#founding_year`
   * returns an `Integer` that is the year the cult was founded
+
   ```Ruby
   project_mayhem.founding_year
   => 1996
@@ -76,6 +79,7 @@ Questions you should ask yourself:
 
 - [x] `Cult#slogan`
   * returns a `String` that is this cult's slogan
+
   ```ruby
   solarii.slogan
   => "Brotherhood of the Sun"
@@ -83,6 +87,7 @@ Questions you should ask yourself:
 
 - [x] `Cult#recruit_follower`
   * takes in an argument of a `Follower` instance and adds them to this cult's list of followers
+
   ```ruby
   trinity.recruit_follower(sliske)
   # so this was the output [1]
@@ -103,6 +108,7 @@ Questions you should ask yourself:
 
 - [x] `Cult#cult_population`
   * returns an `Integer` that is the number of followers in this cult
+
   ```ruby
   trinity.cult_population
   => 2
@@ -111,6 +117,7 @@ Questions you should ask yourself:
 
 - [x] `Cult.all`
   * returns an `Array` of all the cults
+
   ```ruby
   Cult.all
   => [#<Cult:0x00007f89021e7ef8
@@ -137,6 +144,7 @@ Questions you should ask yourself:
 
 - [x] `Cult.find_by_name`
   * takes a `String` argument that is a name and returns a `Cult` instance whose name matches that argument
+
   ```ruby
   Cult.find_by_name("Humans Against Monsters")
   => [#<Cult:0x00007f84b98f2d08
@@ -148,6 +156,7 @@ Questions you should ask yourself:
 
 - [x] `Cult.find_by_location`
   * takes a `String` argument that is a location and returns an `Array` of cults that are in that location
+
   ```ruby
   Cult.find_by_location("Yamatai Island")
   => [#<Cult:0x00007fdd7210ddb0
@@ -164,6 +173,7 @@ Questions you should ask yourself:
 
 - [x] `Cult.find_by_founding_year`
   * takes an `Integer` argument that is a year and returns all of the cults founded in that year
+
   ```ruby
   Cult.find_by_founding_year(1996)
   => [#<Cult:0x00007fd894056e68
@@ -177,6 +187,7 @@ Questions you should ask yourself:
 
 - [x] `Follower#name`
   * returns a `String` that is the follower's name
+
   ```Ruby
   robert_paulson.name
   => "Robert Paulson"
@@ -184,6 +195,7 @@ Questions you should ask yourself:
 
 - [x] `Follower#age`
   * returns an `Integer` that is the age of the follower
+
   ```ruby
   lara_croft.age
   => 30
@@ -191,6 +203,7 @@ Questions you should ask yourself:
 
 - [x] `Follower#life_motto`
   * returns a `String` that is the follower's life motto
+
   ```ruby
   sliske.motto
   => "Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?"
@@ -198,6 +211,7 @@ Questions you should ask yourself:
 
 - [x] `Follower#cults`
   * returns an `Array` of this follower's cults
+
   ```Ruby
   lara_croft.cults
   => [#<BloodOath:0x00007fc9a31af918
@@ -230,6 +244,7 @@ Questions you should ask yourself:
 
 - [x] `Follower#join_cult`
   * takes in an argument of a `Cult` instance and adds this follower to the cult's list of followers
+
   ```ruby
   lara_croft.join_cult(ham)
   # output
@@ -250,6 +265,7 @@ Questions you should ask yourself:
 
 - [x] `Follower.all`
   * returns an `Array` of all the followers
+
   ```ruby
   Follower.all
   => [#<Follower:0x00007ff56203ba60
@@ -268,6 +284,7 @@ Questions you should ask yourself:
 
 - [x] `Follower.of_a_certain_age`
   * takes an `Integer` argument that is an age and returns an `Array` of followers who are the given age or older
+
   ```ruby
   Follower.of_a_certain_age(30)
   => [#<Follower:0x00007fde8d87b518
@@ -284,6 +301,7 @@ Questions you should ask yourself:
 
 - [x] `BloodOath#initiation_date`
   * returns a `String` that is the initiation date of this blood oath in the format _YYYY-MM-DD_.
+
   ```ruby
   bo1.initiation_date
   "2003-4-20"
@@ -293,6 +311,7 @@ Questions you should ask yourself:
 
 - [x] `BloodOath.all`
   * returns an `Array` of all the blood oaths
+
   ```ruby
   BloodOath.all
   => [#<BloodOath:0x00007feb7e908708
@@ -359,6 +378,7 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
 
 - [x] `Cult#average_age`
   * returns a `Float` that is the average age of this cult's followers
+
   ```ruby
   # using trinity for this example, both ages were 30 and 23
   trinity.average_age
@@ -367,6 +387,7 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
 
 - [x] `Cult#my_followers_mottos`
   * prints out all of the mottos for this cult's followers
+
   ```ruby
   trinity.my_followers_mottos
   => [
@@ -377,6 +398,7 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
 
 - [x] `Cult.least_popular`
   * returns the `Cult` instance who has the least number of followers :(
+
   ```ruby
   Cult.least_popular
   => #<Cult:0x00007f89d68b8258
@@ -388,6 +410,7 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
 
 - [x] `Cult.most_common_location`
   * returns a `String` that is the location with the most cults
+
   ```ruby
   Cult.most_common_location
   "Yamatai Island"
@@ -398,6 +421,7 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
 
 - [x] `Follower#my_cults_slogans`
   * prints out all of the slogans for this follower's cults
+
   ```ruby
   lara_croft.my_cults_slogans
   => ["...then blood it shall be", "Brotherhood of the Sun", "Cor blimey, mate! What are ye doing in me pockets?"]
@@ -407,6 +431,7 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
 
 - [x] `Follower.most_active`
   * returns the `Follower` instance who has joined the most cults
+
   ```Ruby
   Follower.most_active
   => #<Follower:0x00007fc80b91f868
@@ -417,6 +442,7 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
 
 - [x] `Follower.top_ten`
   * returns an `Array` of followers; they are the ten most active followers
+
   ```ruby
   Follower.top_ten
   => [#<Follower:0x00007f90920eb328 @age=21, @motto="What if I told you there is an app on the market...", @name="Jian-Yang">,
@@ -437,6 +463,7 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
 
 - [x] `BloodOath.first_oath`
   * returns the `Follower` instance for the follower that made the very first blood oath
+
   ```Ruby
   BloodOath.first_oath
   => #<Follower:0x00007f93ec06b3a0
@@ -460,6 +487,7 @@ A highly requested feature from `Cult`s using your app that you plan to paywall 
 
 - [x] `Cult#minimum_age`
   * returns an `Integer` that is the minimum age required for followers joining this cult
+
   ```ruby
   # set as default age for all of them right now
   waystar_royco.minimum_age
@@ -471,6 +499,7 @@ A highly requested feature from `Cult`s using your app that you plan to paywall 
   * NOW this is changed such that if the given `Follower` instance is not of age:
     * do not let them join the cult
     * print out a friendly message informing them that they are too young
+
     ```ruby
     waystar_royco.recruit_follower(mikkel_nielsen) # who is 12 in both 1986 and 2019 ¯\_(ツ)_/¯
     => "NEXT"
@@ -480,6 +509,7 @@ A highly requested feature from `Cult`s using your app that you plan to paywall 
   * NOW this is changed such that if you don't meet the minimum age requirement of the given `Cult` instance:
     * do not let them join the cult
     * print out a friendly message informing them that they are too young
+
     ```ruby
     mikkel_nielsen.join_cult(trinity)
     => "WE NEED ANOTHER BLOOD SACRIFICE"
