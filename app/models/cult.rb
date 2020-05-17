@@ -1,13 +1,14 @@
 class Cult
-  attr_reader :name, :location, :founding_year, :slogan
+  attr_reader :name, :location, :founding_year, :slogan, :minimum_age
 
   @@all =[]
 
-  def initialize(name, location, founding_year, slogan)
+  def initialize(name, location, founding_year, slogan, minimum_age=20)
     @name = name
     @location = location
     @founding_year = founding_year
     @slogan = slogan
+    @minimum_age = minimum_age
     save
   end
 # testing the commit
@@ -31,8 +32,13 @@ class Cult
     self.all.select {|cult| cult.founding_year == int}
   end
 
-  def recruit_follower(lamb)
+  def recruiting_process(lamb)
     BloodOath.new(Time.now.to_s, self, lamb)
+  end
+
+
+  def recruit_follower(lamb)
+    lamb.age > self.minimum_age ? self.recruiting_process(lamb) : "NEXT"
   end
 
   # needed a followers method
@@ -62,4 +68,5 @@ class Cult
     arr = self.all.collect {|location| location.location} # arr of locations
     arr.max_by {|place| arr.count(place)} # can have count inside for this
   end
+
 end

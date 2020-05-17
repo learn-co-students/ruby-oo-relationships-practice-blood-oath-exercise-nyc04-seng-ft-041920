@@ -49,6 +49,8 @@ Questions you should ask yourself:
 * Should I write any other methods?
 * Am I following _Single Source of Truth_?
 
+![Logan Roy](tenor.gif)
+
 **`Cult`**
 
 - [x] `Cult#name`
@@ -57,24 +59,28 @@ Questions you should ask yourself:
   ham.name
   => "Humans Against Monsters"
   ```
+
 - [x] `Cult#location`
   * returns a `String` that is the city where the cult is located
   ```ruby
   trinity.location
   => "Yamatai Island"
   ```
+
 - [x] `Cult#founding_year`
   * returns an `Integer` that is the year the cult was founded
   ```Ruby
   project_mayhem.founding_year
   => 1996
   ```
+
 - [x] `Cult#slogan`
   * returns a `String` that is this cult's slogan
   ```ruby
   solarii.slogan
   => "Brotherhood of the Sun"
   ```
+
 - [x] `Cult#recruit_follower`
   * takes in an argument of a `Follower` instance and adds them to this cult's list of followers
   ```ruby
@@ -94,6 +100,7 @@ Questions you should ask yourself:
      @name="Sliske">,
    @initiation_date="2020-05-16 20:23:11 -0400">
   ```
+
 - [x] `Cult#cult_population`
   * returns an `Integer` that is the number of followers in this cult
   ```ruby
@@ -101,6 +108,7 @@ Questions you should ask yourself:
   => 2
   # bc only Sliske [1] and Lara Croft joined.
   ```
+
 - [x] `Cult.all`
   * returns an `Array` of all the cults
   ```ruby
@@ -126,6 +134,7 @@ Questions you should ask yourself:
     @name="Project Mayhem",
     @slogan="You don't ask questions about Project Mayhem.">]
   ```
+
 - [x] `Cult.find_by_name`
   * takes a `String` argument that is a name and returns a `Cult` instance whose name matches that argument
   ```ruby
@@ -136,6 +145,7 @@ Questions you should ask yourself:
   @name="Humans Against Monsters",
   @slogan="Cor blimey, mate! What are ye doing in me pockets?">]
   ```
+
 - [x] `Cult.find_by_location`
   * takes a `String` argument that is a location and returns an `Array` of cults that are in that location
   ```ruby
@@ -151,6 +161,7 @@ Questions you should ask yourself:
   @name="Solarii",
   @slogan="Brotherhood of the Sun">]
   ```
+
 - [x] `Cult.find_by_founding_year`
   * takes an `Integer` argument that is a year and returns all of the cults founded in that year
   ```ruby
@@ -170,18 +181,21 @@ Questions you should ask yourself:
   robert_paulson.name
   => "Robert Paulson"
   ```
+
 - [x] `Follower#age`
   * returns an `Integer` that is the age of the follower
   ```ruby
   lara_croft.age
   => 30
   ```
+
 - [x] `Follower#life_motto`
   * returns a `String` that is the follower's life motto
   ```ruby
   sliske.motto
   => "Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?"
   ```
+
 - [x] `Follower#cults`
   * returns an `Array` of this follower's cults
   ```Ruby
@@ -213,6 +227,7 @@ Questions you should ask yourself:
     @name="Lara Croft">,
   @initiation_date="2000-03-18">]
   ```
+
 - [x] `Follower#join_cult`
   * takes in an argument of a `Cult` instance and adds this follower to the cult's list of followers
   ```ruby
@@ -232,6 +247,7 @@ Questions you should ask yourself:
    @name="Lara Croft">,
  @initiation_date="2020-05-16 20:11:27 -0400">
   ```
+
 - [x] `Follower.all`
   * returns an `Array` of all the followers
   ```ruby
@@ -249,6 +265,7 @@ Questions you should ask yourself:
   @motto="Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?",
   @name="Sliske">]
   ```
+
 - [x] `Follower.of_a_certain_age`
   * takes an `Integer` argument that is an age and returns an `Array` of followers who are the given age or older
   ```ruby
@@ -273,6 +290,7 @@ Questions you should ask yourself:
   # not 100% certain if this date should be formatted in anyway
   # do revisit this
   ```
+
 - [x] `BloodOath.all`
   * returns an `Array` of all the blood oaths
   ```ruby
@@ -346,6 +364,7 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
   trinity.average_age
   => 26.5
   ```
+
 - [x] `Cult#my_followers_mottos`
   * prints out all of the mottos for this cult's followers
   ```ruby
@@ -355,6 +374,7 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
     "Hmmm, I wonder if there will be the opportunity to kill one bird with two stones?"
   ]
   ```
+
 - [x] `Cult.least_popular`
   * returns the `Cult` instance who has the least number of followers :(
   ```ruby
@@ -365,12 +385,14 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
   @name="Solarii",
   @slogan="Brotherhood of the Sun">
   ```
+
 - [x] `Cult.most_common_location`
   * returns a `String` that is the location with the most cults
   ```ruby
   Cult.most_common_location
   "Yamatai Island"
   ```
+
 
 **`Follower`**
 
@@ -392,6 +414,7 @@ Now we want to build out some useful features so `Cult`s and `Follower`s and get
   @motto="What if I told you there is an app on the market...",
   @name="Jian-Yang">
   ```
+
 - [x] `Follower.top_ten`
   * returns an `Array` of followers; they are the ten most active followers
   ```ruby
@@ -435,17 +458,31 @@ Now one highly requested feature from `Follower`s using your app that you plan t
 
 A highly requested feature from `Cult`s using your app that you plan to paywall ($$$) is to restrict ages for recruits. See if you can implement this functionality.
 
-* `Cult#minimum_age`
+- [x] `Cult#minimum_age`
   * returns an `Integer` that is the minimum age required for followers joining this cult
-* `Cult#recruit_follower`
+  ```ruby
+  # set as default age for all of them right now
+  waystar_royco.minimum_age
+  => 20
+  ```
+
+- [x] `Cult#recruit_follower`
   * takes in an argument of a `Follower` instance and adds them to this cult's list of followers
   * NOW this is changed such that if the given `Follower` instance is not of age:
     * do not let them join the cult
     * print out a friendly message informing them that they are too young
-* `Follower#join_cult`
+    ```ruby
+    waystar_royco.recruit_follower(mikkel_nielsen) # who is 12 in both 1986 and 2019 ¯\_(ツ)_/¯
+    => "NEXT"
+    ```
+- [x] `Follower#join_cult`
   * takes in an argument of a `Cult` instance and adds this follower to the cult's list of followers
   * NOW this is changed such that if you don't meet the minimum age requirement of the given `Cult` instance:
     * do not let them join the cult
     * print out a friendly message informing them that they are too young
+    ```ruby
+    mikkel_nielsen.join_cult(trinity)
+    => "WE NEED ANOTHER BLOOD SACRIFICE"
+    ```
 
 Congrats on finishing your cult social network platform. Time to rake in the $$$!

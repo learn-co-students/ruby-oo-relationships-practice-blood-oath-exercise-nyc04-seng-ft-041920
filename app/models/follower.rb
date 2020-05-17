@@ -27,8 +27,13 @@ class Follower
     BloodOath.all.select {|cult| cult.follower == self}
   end
 
-  def join_cult(cult)
+  def application(cult)
     BloodOath.new("#{Time.now}", cult, self)
+  end
+
+  def join_cult(cult)
+    self.age > cult.minimum_age ? application(cult) : "WE NEED ANOTHER BLOOD SACRIFICE"
+    # rework this to use self.of_a_certain_age
   end
 
   def my_cults_slogans
@@ -36,16 +41,22 @@ class Follower
   end
 
   def self.most_active
-    # why not throw them into a new array using cults?
     arr = BloodOath.all.collect {|person| person.follower}
     arr.max_by {|person| arr.count(person)}
   end
 
   def self.top_ten
-    # returns an Array of followers; they are the ten most active followers
     # did it want instance
-    arr = self.all.max(10){|person| person.cults.length}
+    self.all.max(10){|person| person.cults.length}.collect {|name| name.name}
     # or did it want the name of each person, in the array?
-    arr.collect {|name| name.name}
+  end
+
+  def fellow_cult_members(member)
+    # how does this not take an argument???
+    # remember how it says uniq? can't include you
+    # self.all.select {|follower|}
+    # don't you want to grab followers first,
+
+    cults.collect {|follower| cults.follower.name unless cults.follower.name == member.name}
   end
 end
