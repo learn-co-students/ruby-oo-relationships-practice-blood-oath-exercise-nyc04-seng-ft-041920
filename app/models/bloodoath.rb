@@ -4,7 +4,7 @@ class BloodOath
     @@all = []
 
     def initialize(cult, follower)
-        @date = Time.now
+        @date = "#{Time.now.year}-#{Time.now.month}-#{Time.now.day}"
         @cult = cult 
         @follower = follower
 
@@ -13,6 +13,10 @@ class BloodOath
 
     def self.all
         @@all
+    end
+
+    def self.first_oath
+        self.all[0].follower
     end
 
 
