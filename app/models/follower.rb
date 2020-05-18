@@ -33,7 +33,6 @@ class Follower
 
   def join_cult(cult)
     self.age > cult.minimum_age ? application(cult) : "WE NEED ANOTHER BLOOD SACRIFICE"
-    # rework this to use self.of_a_certain_age
   end
 
   def my_cults_slogans
@@ -52,6 +51,8 @@ class Follower
   end
 
   def fellow_cult_members
-    # cults.collect {|follower| cults.follower.name unless cults.follower.name == member.name}
+    # im embarassed but it passes “¯\_(ツ)_/¯“
+    all_followers = cults.collect {|bo| bo.cult}.collect {|cult| cult.followers}.flatten
+    all_followers.collect {|follow| follow.follower.name}.select {|name| name != self.name}.uniq
   end
 end

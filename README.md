@@ -463,10 +463,13 @@ Our platform is done! Let's commit our code!
 
 Now one highly requested feature from `Follower`s using your app that you plan to paywall ($$$) is to see your fellow cult members. See if you can implement this method.
 
-* `Follower#fellow_cult_members`
+- [x] `Follower#fellow_cult_members`
   * returns a unique `Array` of followers who are in the same cults as you
     A highly requested feature from `Cult`s using your app that you plan to paywall ($$$) is to restrict ages for recruits. See if you can implement this functionality.
-
+```ruby
+lara_croft.fellow_cult_members
+=> ["Sliske", "Jian-Yang"]
+```
 ---
 
 - [x] `Cult#minimum_age`
