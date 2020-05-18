@@ -43,6 +43,12 @@ class Cult
     def self.find_by_founding_year(year)
         self.all.find_all {|cult| cult.founding_year == year}
     end
+
+    def average_age
+        total = 0
+        self.followers.each {|follower| total += follower.age}
+        total/(self.cult_population.to_f)
+    end
 end
 
 teamrocket = Cult.new("Team Rocket", "Kanto", 1996, "To protect the world from devastation")
@@ -67,4 +73,6 @@ mlm.recruit_follower(hun)
 
 # pp hun.cults
 
-pp Follower.of_a_certain_age(30)
+# pp Follower.of_a_certain_age(30)
+
+pp teamrocket.average_age
