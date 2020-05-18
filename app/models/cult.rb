@@ -93,7 +93,7 @@ teamrocket.recruit_follower(hun)
 mlm.recruit_follower(hun)
 mlm.recruit_follower(jesse)
 
-# pp BloodOath.all
+pp BloodOath.all
 
 # pp mlm.cult_population
 
@@ -107,6 +107,6 @@ mlm.recruit_follower(jesse)
 
 # pp Cult.most_common_location
 
-pp Follower.top_ten
+# pp Follower.top_ten
 
 
