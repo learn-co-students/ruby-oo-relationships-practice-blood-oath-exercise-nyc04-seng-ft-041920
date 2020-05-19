@@ -50,7 +50,6 @@ Questions you should ask yourself:
 * Am I following _Single Source of Truth_?
 
 **`Cult`**
-
 * `Cult#name`
   * returns a `String` that is the cult's name
 * `Cult#location`
@@ -73,7 +72,6 @@ Questions you should ask yourself:
   * takes an `Integer` argument that is a year and returns all of the cults founded in that year
 
 **`Follower`**
-
 * `Follower#name`
   * returns a `String` that is the follower's name
 * `Follower#age`
@@ -90,7 +88,6 @@ Questions you should ask yourself:
   * takes an `Integer` argument that is an age and returns an `Array` of followers who are the given age or older
 
 **`BloodOath`**
-
 * `BloodOath#initiation_date`
   * returns a `String` that is the initiation date of this blood oath in the format _YYYY-MM-DD_.
 * `BloodOath.all`
